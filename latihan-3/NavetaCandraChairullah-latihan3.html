@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <title>Tugas Web Dasar - Naveta Candra Chairullah</title>
+        <meta name="author" content="navetacandra" />
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: monospace;
+                font-size: 1.5em;
+                padding: 2rem;
+            }
+
+            details {
+                background: #ccc;
+                margin-bottom: 1rem;
+                padding: 1rem;
+                cursor: pointer;
+            }
+
+            details > p {
+                line-height: 2rem;
+                margin-bottom: 1rem;
+                text-align: justify;
+            }
+
+            .toc td {
+                padding: 0.25rem 0;
+            }
+        </style>
+    </head>
+    <body>
+        <span id="top"></span>
+        <div style="text-align: center; margin-bottom: 3rem">
+            <img
+                src="assets/profile-image.jpg"
+                alt="navetacandra's profile image"
+                style="border-radius: 100%; margin-bottom: 1rem"
+            />
+            <p style="font-weight: bold; font-size: 1.5rem">
+                Naveta Candra Chairullah
+            </p>
+            <p style="margin-bottom: 0.75rem">
+                <a href="https://navetacandraa.my.id" target="_self"
+                    >@navetacandra</a
+                >
+            </p>
+            <small>Student | Full-stack developer</small>
+        </div>
+
+        <h2>Table of Contents</h2>
+        <table class="toc" style="margin-bottom: 5rem">
+            <tr>
+                <td>
+                    <a href="#image1">Image 1</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#image2">Image 2</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#news1"
+                        >Better Air Quality Conference 2026: Daily Update - 12
+                        March 2026</a
+                    >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#news2"
+                        >China's OpenClaw Frenzy Tests Xi's Approach to Regulate
+                        AI</a
+                    >
+                </td>
+            </tr>
+        </table>
+
+        <!-- Image 1 -->
+        <details id="image1">
+            <summary>
+                <h3 style="display: inline-block">Image</h3>
+            </summary>
+
+            <p>
+                Berikut ini adalah contoh penggunaan tag img dan atribut
+                background-image pada style untuk menampilkan gambar.
+            </p>
+
+            <div style="display: inline-block; gap: 2rem">
+                <img
+                    src="assets/profile-image.jpg"
+                    alt="navetacandra's profile image"
+                    style="border-radius: 100%"
+                    width="200"
+                    height="200"
+                />
+                <div
+                    style="
+                        display: inline-block;
+                        width: 200px;
+                        height: 200px;
+                        border-top-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        background: url(assets/profile-image.jpg) center center;
+                        background-size: 200px;
+                    "
+                ></div>
+            </div>
+        </details>
+
+        <!-- Image 2 -->
+        <details id="image2">
+            <summary>
+                <h3 style="display: inline-block">Image Map</h3>
+            </summary>
+
+            <p>
+                Berikut ini adalah contoh penggunaan image map dengan url tujuan
+                halaman utama PNJ dan W3schools. Keduanya menggunakan target
+                _blank.
+            </p>
+
+            <img src="assets/image-map.jpg" usemap="#image-map" />
+
+            <map name="image-map">
+                <area
+                    target="_blank"
+                    alt="Politeknik Negeri Jakarta"
+                    title="Politeknik Negeri Jakarta"
+                    href="https://pnj.ac.id"
+                    coords="96,67,31,7"
+                    shape="rect"
+                />
+                <area
+                    target="_blank"
+                    alt="W3schools"
+                    title="W3schools"
+                    href="https://w3schools.com"
+                    coords="243,52,33"
+                    shape="circle"
+                />
+            </map>
+        </details>
+
+        <!-- News 1 -->
+        <details id="news1">
+            <summary>
+                <h3 style="display: inline-block">
+                    Better Air Quality Conference 2026: Daily Update - 12 March
+                    2026
+                </h3>
+            </summary>
+            <p>
+                Discussions at the Better Air Quality Conference 2026 continued
+                today with a strong focus on how countries can accelerate
+                implementation of clean air solutions by integrating super
+                pollutant mitigation, strengthening technical capacity, and
+                scaling practical sectoral interventions.
+            </p>
+            <p>
+                Across sessions, speakers emphasised that the next phase of air
+                quality action will depend on stronger alignment between air
+                pollution, climate mitigation, health policy, and development
+                planning. For many countries in Asia, these agendas remain
+                fragmented despite sharing the same sources and solutions.
+            </p>
+            <p>
+                The discussions reinforced a growing consensus: integrated
+                approaches deliver the greatest benefits for health, climate,
+                and economies.
+            </p>
+            <a href="#top">Kembali ke atas</a> |
+            <a
+                href="https://www.ccacoalition.org/news/better-air-quality-conference-2026-daily-update-12-march-2026"
+                target="_parent"
+                >Baca selengkapnya..</a
+            >
+        </details>
+
+        <!-- News 2 -->
+        <details id="news2">
+            <summary>
+                <h3 style="display: inline-block">
+                    China's OpenClaw Frenzy Tests Xi's Approach to Regulate AI
+                </h3>
+            </summary>
+            <p>
+                The OpenClaw frenzy that spread throughout China is testing
+                Beijing’s approach to artificial intelligence, as it seeks to
+                balance the push for cutting-edge innovation against concerns
+                over data security.
+            </p>
+            <p>
+                Tech giants and consumers have rushed to embrace the agentic AI
+                phenomenon in the past few weeks and at its peak hundreds of
+                people queued outside a tech shop in Shenzhen for help
+                installing the software.
+            </p>
+            <p>
+                But runaway uptake of the foreign technology caught the
+                attention of officials and on Wednesday the central government
+                warned state-run enterprises and agencies against installing it
+                on office computers, according to people familiar with the
+                matter.
+            </p>
+            <p>
+                China is racing to establish itself as a world leader in AI and
+                has pushed to embed it across its economy, with an aim to
+                transform industries as well as everyday life. The new directive
+                underlines how that ambition is jutting up against the ruling
+                Communist Party’s instinct for stability and control.
+            </p>
+            <p>
+                “Chinese regulators typically respond with extraordinary speed
+                to threats from emerging technologies, but the rate of adoption
+                of OpenClaw and other agentic tools is still outpacing them,”
+                said Kendra Schaefer, partner and director of tech policy
+                research at Trivium China.
+            </p>
+            <p>
+                Software like OpenClaw, an open-source autonomous AI agent
+                developed by an Austrian which slipped into mainstream use this
+                year, can carry out tasks from email clean-ups to calendar
+                management and flight check‑ins. The practice of installing the
+                AI agent has even acquired a nickname in China: “raising
+                lobsters.”
+            </p>
+            <a href="#top">Kembali ke atas</a> |
+            <a
+                href="https://www.bloomberg.com/news/articles/2026-03-12/china-s-openclaw-frenzy-tests-xi-s-approach-to-regulate-ai"
+                target="_top"
+                >Baca selengkapnya..</a
+            >
+        </details>
+    </body>
+</html>
