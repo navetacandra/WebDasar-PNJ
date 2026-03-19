@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="author" content="navetacandra" />
+        <title>Naveta Candra Chairullah - Latihan 4</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            table {
+                margin: auto;
+                width: 50%;
+            }
+
+            td {
+                padding: 0.25rem 0;
+            }
+
+            td:first-child > label {
+                font-weight: 600;
+            }
+
+            input,
+            select,
+            textarea {
+                width: 70%;
+                padding: 0.25rem 0.75rem;
+            }
+
+            input[type="radio"],
+            input[type="checkbox"],
+            input[type="reset"],
+            input[type="submit"] {
+                width: min-content;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#" method="GET">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h1
+                            style="
+                                text-align: center;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            "
+                        >
+                            <span style="">Form Pendaftaran</span>
+                            <svg width="200" height="70">
+                                <rect
+                                    x="50"
+                                    y="10"
+                                    height="50"
+                                    width="100"
+                                    fill="lightblue"
+                                    stroke="darkblue"
+                                    stroke-width="2"
+                                    rx="6"
+                                    ry="6"
+                                />
+                                <text
+                                    x="100"
+                                    y="40"
+                                    text-anchor="middle"
+                                    fill="darkblue"
+                                    font-size="16"
+                                    font-weight="bold"
+                                >
+                                    HIMATIK
+                                </text>
+                            </svg>
+                        </h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="nama">Nama</label></td>
+                    <td>
+                        <input
+                            type="text"
+                            placeholder="Nama.."
+                            id="nama"
+                            name="nama"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="nim">NIM</label></td>
+                    <td>
+                        <input
+                            type="number"
+                            placeholder="NIM.."
+                            id="nim"
+                            name="nim"
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="jenis_kelamin">Jenis Kelamin</label></td>
+                    <td>
+                        <input
+                            type="radio"
+                            id="laki_laki"
+                            name="jenis_kelamin"
+                            value="Laki-Laki"
+                            required
+                        />
+                        <label for="laki_laki">Laki-Laki</label>
+                        <input
+                            type="radio"
+                            id="perempuan"
+                            name="jenis_kelamin"
+                            value="Perempuan"
+                            required
+                        />
+                        <label for="perempuan">Perempuan</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="skill">Skill</label></td>
+                    <td>
+                        <div>
+                            <input type="checkbox" id="coding" name="skill" />
+                            <label for="coding">Coding</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="design" name="skill" />
+                            <label for="design">Design</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="network" name="skill" />
+                            <label for="network">Network</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="jurusan">Jurusan</label></td>
+                    <td>
+                        <select name="jurusan" id="jurusan" required>
+                            <option value="" selected disabled>
+                                -- Pilih Jurusan --
+                            </option>
+                            <option value="ti">Teknik Informatika</option>
+                            <option value="tmd">
+                                Teknik Multimedia Digital
+                            </option>
+                            <option value="tmj">
+                                Teknik Multimedia dan Jaringan
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="alamat">Alamat</label></td>
+                    <td>
+                        <textarea
+                            name="alamat"
+                            id="alamat"
+                            placeholder="Alamat domisili"
+                        ></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="reset" value="Reset" />
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <h2>Contoh Canvas</h2>
+        <canvas id="canvas"></canvas>
+
+        <script>
+            const canvas = document.getElementById("canvas");
+            canvas.width = canvas.height = 400;
+            const ctx = canvas.getContext("2d");
+            // Code from https://www.youtube.com/watch?v=9w8xOwQvPhs
+            ctx.beginPath();
+            ctx.moveTo(200, 100);
+            ctx.bezierCurveTo(200, 20, 75, 20, 75, 100);
+            ctx.bezierCurveTo(75, 180, 200, 300, 200, 300);
+            ctx.bezierCurveTo(225, 280, 325, 180, 325, 100);
+            ctx.bezierCurveTo(325, 20, 200, 20, 200, 100);
+            ctx.stroke();
+            ctx.fillStyle = "red";
+            ctx.fill();
+            ctx.closePath();
+        </script>
+    </body>
+</html>
