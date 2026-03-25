@@ -63,3 +63,23 @@ h2 {
     opacity: 0.6;
     margin-bottom: 0.5rem;
 }
+
+.horizontal-list {
+    display: flex;
+    justify-content: start;
+    gap: 2rem;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    background-color: #aaa;
+    height: 8rem;
+    aspect-ratio: 16/9;
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
+}
+
+.video p {
+    padding: 0 0.25rem;
+}
