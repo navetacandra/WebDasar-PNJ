@@ -1,0 +1,141 @@
+<!doctype html>
+<!-- TUGAS INI DIKERJAKAN MURNI TANPA AI APAPUN DAN DIKETIK SECARA MANUAL 100% -->
+<html lang="en">
+    <head>
+        <meta name="author" content="navetacandra" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Naveta Candra Chairullah - Latihan 6</title>
+        <style>
+            .container {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            #task-list {
+                margin-top: 1rem;
+                width: 75%;
+            }
+
+            #task-list,
+            #task-list tr,
+            #task-list th,
+            #task-list td {
+                border: 1px solid #000;
+                border-collapse: collapse;
+            }
+
+            #task-list th,
+            #task-list td {
+                padding: 0.5rem 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>ToDo List Application</h1>
+            <p id="author"></p>
+            <form action="#" method="POST" onsubmit="tambahTask(event)">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="task">Tugas</label>
+                        </td>
+                        <td>
+                            <input type="text" name="task" id="task" />
+                        </td>
+                        <td>
+                            <button type="submit">Tambah Tugas</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <table id="task-list">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tugas</th>
+                        <th>Ditambahkan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <script>
+            const taskInput = document.getElementById("task");
+            const taskListContainer =
+                document.querySelector("#task-list > tbody");
+
+            let taskNumber = 0;
+            function tambahTask(e) {
+                e.preventDefault();
+                const id = Date.now(); // mendapatkan unix timestamp (waktu dalam satuan millisecond)
+                const task = taskInput.value; // mendapatkan nilai input
+                const date = new Date(); // mendapatkan tanggal/waktu saat ini
+
+                // cek panjang nama task, jika kosong maka abaikan proses selanjutnya
+                if (task.trim().length < 1) return;
+
+                // membuat string tanggal dengan format "dd-MM-YYYY hh:mm:ss"
+                const dateString =
+                    date.getDate().toString().padStart(2, "0") + "/" + date.getMonth().toString().padStart(2, "0") + "/" + date.getFullYear() +
+                    " " + date.getHours().toString().padStart(2, "0") + ":" + date.getMinutes().toString().padStart(2, "0") + ":" + date.getSeconds().toString().padStart(2, "0"); 
+
+                const tableRow = document.createElement("tr"); // membuat element tr untuk task baru
+                const numberCol = document.createElement("td"); // membuat elemen td untuk kolom nomor
+                const taskCol = document.createElement("td"); // membuat elemen td untuk kolom task
+                const dateCol = document.createElement("td"); // membuat elemen td untuk kolom waktu
+                const aksiCol = document.createElement("td"); // membuat elemen td untuk kolom aksi
+                const aksiButton = document.createElement("button"); // membuat elemen button untuk tombol aksi
+
+                numberCol.innerText = ++taskNumber; // isi kolom nomor dengan increment taskNumber
+                taskCol.innerText = task; // isi kolom task dengan isi input task
+                dateCol.innerText = dateString; // isi kolom waktu dengan string terformat
+                aksiButton.textContent = "Tandai Sudah"; // memberi text pada button aksi
+                aksiButton.onclick = () => hapusTask(id.toString()); // set fungsi klik untuk tombol aksi yang menargetkan id task
+
+                tableRow.append(numberCol); // tambah kolom nomor ke baris task
+                tableRow.append(taskCol); // tambah kolom task ke baris task
+                tableRow.append(dateCol); // tambah kolom waktu ke baris task
+
+                aksiCol.append(aksiButton); // tamabah tombol aksi ke kolom aksi
+                tableRow.append(aksiCol); // tambah kolom aksi ke baris task
+
+                tableRow.id = id; // set id task ke baris (elemen tr)
+                taskListContainer.append(tableRow); // tambahkan baris task baru yang sudah diisi ke tbody table task-list
+            }
+
+            function hapusTask(id) {
+                document.getElementById(id).remove(); // menghapus elemen dengan id tujuan.
+            }
+
+            function delay(ms) {
+                return new Promise((res) => setTimeout(res, ms)); // tunggu fungsi diteruskan (resolve) setelah menunggu selama ms (milidetik)
+            }
+
+            async function efekRandomKarakter(teks) {
+                let setChar =
+                    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY0123456789-=!@#$%^&*()_+[]{}\\|;':\",<.>/?`~ "; // list karakter yang bisa dicetak
+                let str = new Array(teks.length).fill(" "); // membuat tampungan array
+                const target = document.getElementById("author"); // menyeleksi elemen tujuan
+
+                for (let i = 0; i < teks.length; i++) {
+                    // mengulangi sebanyak panjang teks asli
+                    for (let j = 0; j < setChar.length; j++) {
+                        // mencoba setiap kemungkinan karakter
+                        str[i] = setChar.charAt(j); // mengubah karakter indeks ke-i untuk percobaan ke-j
+                        target.innerText = str.join(""); // menampilkan hasil percobaan ke elemen target
+
+                        if (setChar.charAt(j) === teks.charAt(i)) break; // jika karakter match, stop percobaan
+                        await delay(15); // tunggu 5 milidetik untuk tiap percobaan
+                    }
+                }
+            }
+
+            efekRandomKarakter("Naveta Candra - 2507411014"); // jalankan fungsi efek karakter random
+        </script>
+    </body>
+</html>
